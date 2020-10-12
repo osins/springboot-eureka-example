@@ -10,10 +10,10 @@
     <version>1.0-SNAPSHOT</version>
   </parent>
   <groupId>cloud.miles4j.parent</groupId>
-  <artifactId>cloud.miles4j.eureka</artifactId>
+  <artifactId>cloud.miles4j.eureka.server</artifactId>
   <version>1.0-SNAPSHOT</version>
 
-  <name>cloud.miles4j.eureka</name>
+  <name>cloud.miles4j.eureka.server</name>
   <!-- FIXME change it to the project's website -->
   <url>http://cloud.miles4j</url>
 
