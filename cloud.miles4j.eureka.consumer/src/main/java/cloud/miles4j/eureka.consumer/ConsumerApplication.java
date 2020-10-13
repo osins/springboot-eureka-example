@@ -17,7 +17,7 @@ import java.util.Map;
 
 
 /**
- * Eureka客户端-消费者
+ * Eureka消费者(其实也是个客户端)
  */
 
 @RestController
