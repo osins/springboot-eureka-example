@@ -55,7 +55,7 @@ eureka:
 ### Consumer
 ```
 server:
-  port: 8090  #服务端口号
+  port: 8090
 spring:
   application:
     name: cloud.miles4j.eureka.consumer
