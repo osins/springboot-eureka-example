@@ -20,7 +20,7 @@ cloud.miles4j.eureka.consumer 服务消费者
 
 ### Server:
 
-/````
+```
 server:
   port: 8000
 
@@ -36,10 +36,10 @@ eureka:
   server:
     enable‐self‐preservation: false
     eviction‐interval‐timer‐in‐ms: 60000
-````/
+```
 
 ### Provider
-/````
+```
 server:
   port: 8081
 eureka:
@@ -49,10 +49,10 @@ eureka:
 spring:
   application:
     name: cloud.miles4j.eureka.provider
-````/
+```
 
 ### Consumer
-/````
+```
 
 eureka:
   client:
@@ -63,4 +63,4 @@ server:
 spring:
   application:
     name: cloud.miles4j.eureka.consumer #服务名称--调用的时候根据名称来调用该服务的方法
-````/
+```
