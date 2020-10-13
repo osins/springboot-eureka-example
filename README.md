@@ -42,7 +42,7 @@ eureka:
 ### Provider
 ```
 server:
-  port: 8081
+  port: 8080
 spring:
   application:
     name: cloud.miles4j.eureka.provider
