@@ -64,3 +64,30 @@ eureka:
     serviceUrl:
       defaultZone: http://127.0.0.1:8000/eureka/
 ```
+
+### 流程
+1. 先启动 cloud.miles4j.eureka.server
+2. 再启动 cloud.miles4j.eureka.provider
+3. 最后启动 cloud.miles4j.eureka.consumer
+
+### 关键
+@EnableEurekaServer 注解开启Eureak的服务
+
+```
+package cloud.miles4j.eureka.server;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
+
+/**
+ * @author richard
+ */
+@EnableEurekaServer
+@SpringBootApplication
+public class ServerApplication {
+    public static void main(String[] args) {
+        SpringApplication.run(ServerApplication.class, args);
+    }
+}
+```
