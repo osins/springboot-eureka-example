@@ -124,3 +124,54 @@ public class ProviderApplication {
 
 }
 ```
+
+@EnableEurekaClient 注解开启客户端,并消费服务(其实无论是提供方还是消费方,在Eureka来说都是客户端),这里需要注意的是访问服务不是输入提供方的地址,而是使用Eureka注册服务的地址,切记不要搞错
+```
+@GetMapping(value = "/getUser")
+@ResponseBody
+public Map<String, Object> getUser(@RequestParam Integer id) {
+    Map<String, Object> data = new HashMap<>();
+
+    data = restTemplate.getForObject("http://cloud.miles4j.eureka.provider/getUser?id=" + id, Map.class);
+
+    return data;
+
+}
+```
+
+```
+@RestController
+@EnableEurekaClient
+@SpringBootApplication
+public class ConsumerApplication {
+    @Autowired
+    RestTemplate restTemplate;
+
+    public static void main(String[] args) {
+        SpringApplication.run(ConsumerApplication.class, args);
+    }
+
+
+    /**
+     * 实例化RestTemplate
+     *
+     * @return
+     */
+    @LoadBalanced
+    @Bean
+    public RestTemplate rest() {
+        return new RestTemplate();
+    }
+
+    @GetMapping(value = "/getUser")
+    @ResponseBody
+    public Map<String, Object> getUser(@RequestParam Integer id) {
+        Map<String, Object> data = new HashMap<>();
+
+        data = restTemplate.getForObject("http://cloud.miles4j.eureka.provider/getUser?id=" + id, Map.class);
+
+        return data;
+
+    }
+}
+```
