@@ -133,6 +133,7 @@ spring:
     name: cloud.miles4j.eureka.provider
 ```
 
+2. 调用的时候要指定的是注册服务的名字,而不是其他地址
 ```
 @GetMapping(value = "/getUser")
 @ResponseBody
@@ -146,7 +147,7 @@ public Map<String, Object> getUser(@RequestParam Integer id) {
 }
 ```
 
-2. 调用的时候要指定的是注册服务的名字,而不是其他地址
+完整的消费示例代码,其实就是普通的rest api调用,只是地址是输入Provider注册时指定的服务名称:
 ```
 @RestController
 @EnableEurekaClient
