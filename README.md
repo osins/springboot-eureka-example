@@ -125,7 +125,14 @@ public class ProviderApplication {
 }
 ```
 
-@EnableEurekaClient 注解开启客户端,并消费服务(其实无论是提供方还是消费方,在Eureka来说都是客户端),这里需要注意的是访问服务不是输入提供方的地址,而是使用Eureka注册服务的地址,切记不要搞错
+@EnableEurekaClient 注解开启客户端,并消费服务(其实无论是提供方还是消费方,在Eureka来说都是客户端),这里需要注意的是访问服务不是输入提供方的地址,也不是输入Eureka服务的地址,而是使用之前在Provider的application.yml中配置的注册服务名,切记不要搞错.
+1. 之前在Provider的application.yml中配置的注册服务名
+```
+spring:
+  application:
+    name: cloud.miles4j.eureka.provider
+```
+
 ```
 @GetMapping(value = "/getUser")
 @ResponseBody
@@ -139,6 +146,7 @@ public Map<String, Object> getUser(@RequestParam Integer id) {
 }
 ```
 
+2. 调用的时候要指定的是注册服务的名字,而不是其他地址
 ```
 @RestController
 @EnableEurekaClient
