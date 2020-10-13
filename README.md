@@ -41,25 +41,24 @@ eureka:
 ```
 server:
   port: 8081
+spring:
+  application:
+    name: cloud.miles4j.eureka.provider
 eureka:
   client:
     serviceUrl:
       defaultZone: http://127.0.0.1:8000/eureka/
-spring:
-  application:
-    name: cloud.miles4j.eureka.provider
 ```
 
 ### Consumer
 ```
-
-eureka:
-  client:
-    serviceUrl: #注册中心的注册地址
-      defaultZone: http://127.0.0.1:8000/eureka/
 server:
   port: 8090  #服务端口号
 spring:
   application:
     name: cloud.miles4j.eureka.consumer #服务名称--调用的时候根据名称来调用该服务的方法
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://127.0.0.1:8000/eureka/
 ```
