@@ -23,7 +23,6 @@ cloud.miles4j.eureka.consumer 服务消费者
 ```
 server:
   port: 8000
-
 spring:
   application:
     name: xc‐govern‐center #指定服务名
