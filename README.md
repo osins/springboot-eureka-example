@@ -91,3 +91,36 @@ public class ServerApplication {
     }
 }
 ```
+
+@EnableEurekaClient 注解开启客户端,并注册服务
+
+```
+/**
+ * Eureka提供方(其实也是客户端)
+ */
+@RestController
+@EnableEurekaClient
+@SpringBootApplication
+public class ProviderApplication {
+
+    public static void main(String[] args) {
+        SpringApplication.run(ProviderApplication.class, args);
+    }
+
+
+    /**
+     * 假如这个客户端要提供一个getUser的方法
+     * @return
+     */
+    @GetMapping(value = "/getUser")
+    @ResponseBody
+    public Map<String,Object> getUser(@RequestParam Integer id){
+        Map<String,Object> data = new HashMap<>();
+        data.put("id",id);
+        data.put("userName","admin");
+        data.put("from","provider-A");
+        return data;
+    }
+
+}
+```
