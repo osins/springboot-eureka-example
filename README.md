@@ -147,7 +147,7 @@ public Map<String, Object> getUser(@RequestParam Integer id) {
 }
 ```
 
-完整的消费示例代码,其实就是普通的rest api调用,只是地址是输入Provider注册时指定的服务名称:
+3. 完整的消费示例代码,其实就是普通的rest api调用,只是地址是输入Provider注册时指定的服务名称:
 ```
 @RestController
 @EnableEurekaClient
