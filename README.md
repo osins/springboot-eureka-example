@@ -25,7 +25,7 @@ server:
   port: 8000
 spring:
   application:
-    name: xc‐govern‐center #指定服务名
+    name: cloud.miles4j.eureka.server
 eureka:
   client:
     registerWithEureka: false
