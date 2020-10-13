@@ -11,7 +11,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Eureka客户端
+ * Eureka提供方(其实也是客户端)
  */
 @RestController
 @EnableEurekaClient
