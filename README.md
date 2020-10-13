@@ -1,4 +1,4 @@
-# springboot-eureka-example
+# Springboot-eureka-example
 多模块的基于springboot的eureka项目示例
 
 ## Eureka是什么?
@@ -15,8 +15,10 @@ cloud.miles4j.eureka.server Eureka服务
 cloud.miles4j.eureka.provider 服务提供者
 cloud.miles4j.eureka.consumer 服务消费者
 
-## eureka 配置
-### server:
+## Eureka 配置
+注意: defaultZone为Eureak服务的地址,不要填写错误,Provider和Consumer应该都是填写Eureak服务的地址,而不是它本身或者Provider的地址.
+
+### Server:
 /```
 server:
   port: 8000
@@ -29,13 +31,13 @@ eureka:
     registerWithEureka: false
     fetchRegistry: false
     serviceUrl:
-      defaultZone: http://localhost:${server.port}/eureka/
+      defaultZone: http://127.0.0.1:${server.port}/eureka/
   server:
     enable‐self‐preservation: false
     eviction‐interval‐timer‐in‐ms: 60000
 ```/
 
-### provider
+### Provider
 /```
 server:
   port: 8081
@@ -48,7 +50,7 @@ spring:
     name: cloud.miles4j.eureka.provider
 ```/
 
-### consumer
+### Consumer
 /```
 
 eureka:
