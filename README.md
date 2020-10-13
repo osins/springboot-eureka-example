@@ -12,7 +12,7 @@ Eureka Server之间通过复制的方式完成数据的同步，Eureka还提供�
 
 ## 本项目的模块说明
 ```
-cloud.miles4j.eureka.server Eureka服务
+cloud.miles4j.eureka.server 注册服务
 cloud.miles4j.eureka.provider 服务提供者
 cloud.miles4j.eureka.consumer 服务消费者
 ```
