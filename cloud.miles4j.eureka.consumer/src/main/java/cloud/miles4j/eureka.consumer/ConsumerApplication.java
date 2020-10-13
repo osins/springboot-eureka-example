@@ -45,7 +45,7 @@ public class ConsumerApplication {
 
 
     /**
-     * Rest服务端使用RestTemplate发起http请求,然后得到数据返回给前端----gotoUser是为了区分getUser怕小伙伴晕头
+     * Rest服务端使用RestTemplate发起http请求,然后得到数据返回给前端
      *
      * @param id
      * @return
