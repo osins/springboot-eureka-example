@@ -56,7 +56,7 @@ server:
   port: 8090  #服务端口号
 spring:
   application:
-    name: cloud.miles4j.eureka.consumer #服务名称--调用的时候根据名称来调用该服务的方法
+    name: cloud.miles4j.eureka.consumer
 eureka:
   client:
     serviceUrl:
